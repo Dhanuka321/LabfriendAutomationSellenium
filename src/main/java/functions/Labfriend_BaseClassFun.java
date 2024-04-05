@@ -20,15 +20,16 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentReporter;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import contexts.Labfriend_LoginContext;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.LabFriend_LoginPage;
 
 public class Labfriend_BaseClassFun {
-	public WebDriver driver = null;
+	public static WebDriver driver = null;
 	public LabFriend_LoginPage labfriendLoginPage = null;
 	public static ExtentReports extent = null;
 
-	public WebDriver initilizeDriver() throws IOException {
+	public static WebDriver initilizeDriver() throws IOException {
 
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(
@@ -56,15 +57,6 @@ public class Labfriend_BaseClassFun {
 
 	}
 
-	@BeforeMethod
-	public void launchApplication() throws IOException {
-		driver = initilizeDriver();
-		labfriendLoginPage = new LabFriend_LoginPage(driver);
-		labfriendLoginPage.gotoHomePage(driver);
-		labfriendLoginPage.loginApplication("info@labfriend.com.au", "johnm3102!");
-
-	}
-
 	public static ExtentReports reportConfig() {
 
 		System.out.println("reportConfig");
@@ -88,10 +80,25 @@ public class Labfriend_BaseClassFun {
 
 		return System.getProperty("user.dir") + "\\reports\\" + testcaseName + ".png";
 	}
+	public static void implicitGlobalWait(int waitTimeInSeconds) {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitTimeInSeconds));
+	}
+
+	@BeforeMethod
+	public void launchApplication() throws IOException {
+		// Before Method is executed before each test is executed.
+		Labfriend_LoginContext loginContext=new Labfriend_LoginContext();
+		driver = initilizeDriver();
+		labfriendLoginPage = new LabFriend_LoginPage(driver);
+		labfriendLoginPage.gotoHomePage(driver);
+		labfriendLoginPage.loginApplication(loginContext.getemail(), loginContext.getpassword());
+
+	}
 
 	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+		// After Method is executed after each test is executed completely.
+		//driver.quit();
 		// extent.flush();
 	}
 }

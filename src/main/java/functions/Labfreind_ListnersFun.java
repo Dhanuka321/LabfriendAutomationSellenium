@@ -19,7 +19,6 @@ public class Labfreind_ListnersFun extends Labfriend_BaseClassFun implements ITe
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 		// ITestListener.super.onTestStart(result);
-		System.out.println("onTestStart");
 		test = extent.createTest(result.getMethod().getMethodName());
 	}
 
@@ -74,7 +73,6 @@ public class Labfreind_ListnersFun extends Labfriend_BaseClassFun implements ITe
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
 		// ITestListener.super.onFinish(context);
-		System.out.println("onFinish");
 		extent.flush();
 	}
 

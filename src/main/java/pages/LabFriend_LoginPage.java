@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import contexts.Labfriend_LoginContext;
 import functions.LabFriend_CommonFun;
 
 public class LabFriend_LoginPage extends LabFriend_CommonFun {
@@ -24,6 +25,7 @@ public class LabFriend_LoginPage extends LabFriend_CommonFun {
 		// Using Page Factory method
 //		@FindBy(xpath = "//a[@data-cy='signin-link']")
 //		WebElement lnkSignIn;
+
 		waitForElementToAppear(By.xpath("//a[@data-cy='signin-link']"));
 		WebElement lnkSignIn = driver.findElement(By.xpath("//a[@data-cy='signin-link']"));
 		lnkSignIn.click();

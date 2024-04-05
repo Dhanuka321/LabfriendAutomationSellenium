@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="5" name="Test_AddToCart(failed)">
     <classes>
-      <class name="scripts.LabFriend_AddToCart">
+      <class name="scripts.Labfriend_CheckoutProductsScript">
         <methods>
+          <include name="checkoutProducts"/>
           <include name="launchApplication"/>
-          <include name="labfriendAddToCart_2"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- scripts.LabFriend_AddToCart -->
+      </class> <!-- scripts.Labfriend_CheckoutProductsScript -->
     </classes>
   </test> <!-- Test_AddToCart(failed) -->
 </suite> <!-- Failed suite [Suite] -->
