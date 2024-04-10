@@ -39,8 +39,10 @@ public class Labfriend_BaseClassFun {
 				: prop.getProperty("browser");
 		// String browserName = prop.getProperty("browser");
 		if (browserName.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			//WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\DhanukaD\\Work Folders\\Desktop\\chromedriver.exe");
+			 driver = new ChromeDriver();
+			//driver = new ChromeDriver();
 
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();

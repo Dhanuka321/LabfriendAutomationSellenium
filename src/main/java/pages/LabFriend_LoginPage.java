@@ -26,7 +26,7 @@ public class LabFriend_LoginPage extends LabFriend_CommonFun {
 //		@FindBy(xpath = "//a[@data-cy='signin-link']")
 //		WebElement lnkSignIn;
 
-		waitForElementToAppear(By.xpath("//a[@data-cy='signin-link']"));
+		waitForElementToAppear(By.xpath("//a[@data-cy='signin-link']"),5);
 		WebElement lnkSignIn = driver.findElement(By.xpath("//a[@data-cy='signin-link']"));
 		lnkSignIn.click();
 		WebElement txtEmail = driver.findElement(By.xpath("//input[@name='userName']"));
