@@ -4,7 +4,7 @@
 	<listeners>
 		<listener class-name="functions.Labfreind_ListnersFun" />
 	</listeners>
-	<test thread-count="5" name="Test_AddToCart">
+	<test thread-count="1" name="Test_AddToCart">
 		<classes>
 			<!-- <class name="scripts.LabFriend_AddToCart" />-->
 			<class name="scripts.Labfriend_CheckoutProductsScript" />

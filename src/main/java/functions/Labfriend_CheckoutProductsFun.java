@@ -9,6 +9,11 @@ import org.openqa.selenium.interactions.Actions;
 import contexts.Labfriend_CheckoutProducts;
 import pages.Labfriend_CheckoutProductsPage;
 
+/**
+ * @author Dhanuka_Dulanjana
+ * 
+ */
+
 public class Labfriend_CheckoutProductsFun extends LabFriend_CommonFun {
 
 	WebDriver driver;

@@ -10,6 +10,11 @@ import org.testng.Assert;
 import contexts.Labfriend_LoginContext;
 import functions.LabFriend_CommonFun;
 
+/**
+ * @author Dhanuka_Dulanjana
+ * 
+ */
+
 public class LabFriend_LoginPage extends LabFriend_CommonFun {
 	WebDriver driver;
 

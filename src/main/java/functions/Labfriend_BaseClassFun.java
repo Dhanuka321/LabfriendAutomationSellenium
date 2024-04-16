@@ -17,12 +17,17 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentReporter;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import contexts.Labfriend_LoginContext;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.LabFriend_LoginPage;
+
+/**
+ * @author Dhanuka_Dulanjana
+ * 
+ */
+
 
 public class Labfriend_BaseClassFun {
 	public static WebDriver driver = null;
